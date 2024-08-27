@@ -1,0 +1,261 @@
+
+*{
+    margin:0;
+    box-sizing: border-box;
+    list-style: none; /* Убираем маркеры списка у всех ul элементов */
+}
+:root {
+    --main: #D1C1FF;
+    --rose: #ECB1E9;
+    --purple:#686DE0;
+    --hover:#8689e9;
+}
+.IAM{
+    font-family:  "Josefin Sans", sans-serif;
+    font-size: 3rem;
+}
+h3{
+    margin-top: 20px;
+    margin-bottom: 30px;}
+.first {
+    color: var(--rose); /* Устанавливаем розовый цвет для первого слова */
+}
+.grid_container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Максимум два объекта в ряд на широких экранах */
+    grid-gap: 20px;
+    padding: 60px 20px ;
+    /* background-color: rgba(217, 217, 217, 0.5); */
+}
+h1{
+    font-family: "Gloria Hallelujah", cursive;
+    margin-bottom: 15px;
+    color: var(--purple);
+}
+h2, p, li{font-family: "Josefin Sans", sans-serif;}
+
+
+.grid-item {
+    /* background-color: rgba(217, 217, 217, 0.5); */
+    padding: 20px;
+    border-radius: 5px;
+}
+/* MENU START */
+.header{
+    position: fixed; /* Фиксируем футер внизу страницы */
+    left: 0;
+    top: 0;
+    z-index: 9998;
+    width: 100%; /* Футер будет занимать всю доступную ширину */
+    background-color: #ffffff; /* Цвет фона футера */
+    color: #1f1f1f; /* Цвет текста */
+    text-align: center;
+    padding: 10px 0; /* Внутренние отступы */
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.menu{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* MENU END */
+.picture, .skills, .education{
+    position: relative;
+    overflow: hidden;
+}
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.skills li {
+    flex-basis: 50%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    padding: 7px;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    margin-bottom: 10px;
+}
+
+.skills li:nth-child(even) {
+    margin-left: 30px;
+}
+.skills li:hover{
+    cursor: pointer;
+    background-color: var(--hover);
+    transition: .15s linear;
+}
+.skills li:nth-child(even):hover{
+    margin-left: 1px;
+}
+.picture .svg-container{
+    padding: 0;
+    position: absolute;
+    top:-100px;
+    fill: var(--main);
+    right: -10px;
+    z-index: -1;
+    width: 400px; /* Увеличиваем размер */
+    height: auto; /* Увеличиваем размер */
+    transform: rotate(45deg);
+}
+.skills .svg-container {
+    position: absolute;
+    fill: var(--main);
+    z-index: -1;
+    top:10px;
+    left: -40px;
+    width: 350px; /* Увеличиваем размер */
+    height: auto; /* Увеличиваем размер */
+}
+.education .svg-container {
+    position: absolute;
+    z-index: -1;
+    top:10px;
+    left: 0px;
+    width: 400px; /* Увеличиваем размер */
+    height: auto; /* Увеличиваем размер */
+}
+.languages, .contacts{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.contacts{
+    margin-top: 50px;
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.bcg_lang{
+    width: 200px;
+    height: 18px;
+    background-color: var(--main);
+    border-radius: 10px;
+}
+.inner{
+    color: white;
+    width: 140px;
+    height: 18px;
+    background-color: var(--rose);
+    border-radius: 10px;
+    padding: 3px 0 0 10px;
+}
+.inner:hover{
+    background-color: var(--hover);
+    cursor: pointer;
+    transition: .2s;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    width: 30%;
+    background-color: var(--main);   
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+    color: white;
+}
+.btn:hover{
+    background-color: var(--hover);
+    cursor: pointer;
+    transition: .2s;
+}
+
+/* EDUCATION START*/
+.grid-item.education ul {
+    list-style: none;
+    padding: 0;
+}
+
+.grid-item.education li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 35px;
+}
+
+.grid-item.education li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10px; /* Расположение линии относительно элемента li */
+    width: 2px;
+    height: 100%;
+    background-color: var(--main);
+    z-index: -1;
+}
+
+.grid-item.education li::after {
+    content: '';
+    transform: rotate(180deg);
+    position: absolute;
+    bottom: -5px; /* Расположение стрелки относительно нижнего края элемента li */
+    left: 6px; /* Расположение стрелки относительно элемента li */
+    border-width: 5px; /* Уменьшаем размер треугольника */
+    border-style: solid;
+    border-color: transparent transparent var(--main) transparent; /* Цвет треугольника */
+}
+
+.education, .experience{
+    border: 2px solid var(--main);
+    border-radius: 20px;
+}
+.grid-item.experience ul {
+    list-style-type: none; /* Убираем стандартный маркер списка */
+    padding: 0;
+}
+
+.grid-item.experience li {
+    position: relative;
+    padding-left: 20px; /* Отступ слева для текста */
+    margin-bottom: 10px; /* Отступ между элементами списка */
+}
+
+.grid-item.experience li::before {
+    content: "㋡"; /* Задаем символ для псевдоэлемента */
+    position: absolute;
+    left: 0;
+    top:0;
+    margin-right: 20px;;
+    color: var(--main); /* Цвет кружка */
+}
+
+
+/* EDUCATION END*/
+.footer {
+    font-family: "Gloria Hallelujah", cursive;
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Футер будет занимать всю доступную ширину */
+    background-color: white;
+    color: var(--main); /* Цвет текста */
+    text-align: center;
+    padding: 10px 0; /* Внутренние отступы */
+    box-shadow: 4px -4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+@media screen and (max-width: 768px) {
+    .grid_container {
+        grid-template-columns: 1fr; /* Один объект в ряд на устройствах с шириной до 768px */
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .grid_container {
+        margin:0 auto;
+        max-width: 900px; /* Ограничиваем ширину сетки на широких экранах */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .grid-item {
+        padding: 10px; /* Уменьшаем отступы для более узких экранов */
+    }
+}
